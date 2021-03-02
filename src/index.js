@@ -14,7 +14,7 @@ app.get("/", (req, res) => res.send("Welcome to homepage"));
 
 app.use("/user", userRoutes);
 
-app.use("/api", authRoutes);
+app.use("/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(`server runging on port ${PORT}`);

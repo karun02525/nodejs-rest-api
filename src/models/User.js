@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+let userSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -24,6 +24,12 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+});
+
+userSchema.method("toJSON", function () {
+  const { __v, password, _id, ...object } = this.toObject();
+  object.id = _id;
+  return object;
 });
 
 export default mongoose.model("User", userSchema);
