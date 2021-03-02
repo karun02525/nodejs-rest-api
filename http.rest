@@ -1,0 +1,25 @@
+http://localhost:3000/
+
+###
+http://localhost:3000/users
+
+###
+DELETE http://localhost:5000/students/603d42ac95b84f0cd01sc94d5
+
+###
+POST http://localhost:5000/students
+Content-Type: application/json
+
+{
+        "name":"Karun",
+        "email":"karun@gmail.com",
+        "phone":"9431410921",
+        "address":"villages pusauli"
+    }
+
+
+###
+PATCH  http://localhost:5000/students/603d41217c189110946db24d
+Content-Type: application/json
+
+{"name":"kumari","email":"kudra@gmai.com"}
